@@ -16,7 +16,7 @@ import RightArrow from "../assets/right-arrow-grey-bg.svg";
     }
 
     h1 {
-        font-size: clamp(3.6rem, 17.143vw - 1.886rem, 4.8rem);
+        font-size: 3.6rem;
         line-height: 100%;
 
         margin-bottom: 2.4rem;
@@ -59,33 +59,51 @@ import RightArrow from "../assets/right-arrow-grey-bg.svg";
     }
 
     @media only screen and (min-width: 390px) {
+        h1{
+            font-size: 4.8rem;
+        }
         .right-arrow {
             width: 32px;
             height: 32px;
         }
     }
 
-    @media only screen and (min-width: 490px) {
+    @media only screen and (min-width: 744px) {
+        .herobox {
+            padding: 8rem 2rem;
+        }
         h1 {
-            font-size: clamp(4.8rem, 1.524vw + 4.206rem, 6.4rem);
+            font-size: 4.8rem;
+
+            max-width: 22ch;
+            margin: 0 auto;
+            margin-bottom: 4rem;
         }
         .subheading {
-            width: clamp(45.2rem, 24.713vw + 26.814rem, 62.4rem);
+            font-size: 1.8rem;
+            max-width: 50ch;
         }
     }
 
-    @media only screen and (min-width: 990px) {
-        button {
-            font-size: 2rem;
+    @media only screen and (min-width: 1024px) {
+        h1 {
+            font-size: 6.4rem;
+            line-height: 120%;
         }
         .subheading {
-            width: clamp(62.4rem, 23.226vw + 39.406rem, 84rem);
+            font-size: 2rem;
+        }
+        button {
+            font-size: 2rem;
         }
     }
 
     @media only screen and (min-width: 1440px) {
+        .herobox {
+            padding: 8rem 4rem;
+        }
         h1 {
-            font-size: clamp(6.4rem, 3.333vw + 1.6rem, 8rem);
+            font-size: 8rem;
         }
     }
 </style>
@@ -110,7 +128,4 @@ import RightArrow from "../assets/right-arrow-grey-bg.svg";
     </div>
 </div>
 
-
-<script>
-    
-</script>
+<script></script>

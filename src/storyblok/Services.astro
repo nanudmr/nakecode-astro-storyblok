@@ -3,64 +3,117 @@ import { storyblokEditable } from "@storyblok/astro";
 import { Image } from "astro:assets";
 
 const { blok } = Astro.props;
-
 ---
 
 <style>
-    .services{
+    .services-section {
         border-top: 1px solid #777777;
-        padding: 4rem 1rem;
+        padding: 0 1rem;
+        padding-top: 4rem;
     }
 
-    h2{
+    h2 {
         font-size: 3.6rem;
         color: #111111;
         line-height: 120%;
         margin-bottom: 4rem;
     }
 
-    .service{
+    .service {
         padding: 4rem 0;
     }
 
-    h3{
-        font-size: 3rem;
+    h3 {
+        font-size: 2.8rem;
         columns: #222222;
         line-height: 100%;
+        margin-bottom: 2.4rem;
+        font-weight: 700;
+    }
+
+    .service p {
+        line-height: 180%;
+        color: #555555;
+        font-size: 1.6rem;
     }
 
     @media only screen and (min-width: 390px) {
+        h2 {
+            font-size: 4.8rem;
+        }
+        .service p {
+            font-size: 1.8rem;
+        }
     }
 
-    @media only screen and (min-width: 490px) {
+    @media only screen and (min-width: 744px) {
+        .services-section {
+            padding: 0 2rem;
+            padding-top: 8rem;
+        }
+        .services-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-bottom: 4rem;
+        }
+
+        .service {
+            padding: 4rem 0;
+            padding-right: 2rem;
+        }
     }
 
-    @media only screen and (min-width: 990px) {
+    @media only screen and (min-width: 1024px) {
+        h2 {
+            font-size: 6.4rem;
+        }
+        .service p {
+            font-size: 2rem;
+        }
+        
+        .services-container {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
 
     @media only screen and (min-width: 1440px) {
+        .services-section {
+            padding: 0 4rem;
+            padding-top: 8rem;
+        }
+        h2 {
+            font-size: 8rem;
+        }
+
     }
 </style>
 
-<div class="services" {...storyblokEditable(blok)}>
+<div class="services-section" {...storyblokEditable(blok)}>
     <h2>Your one-stop ecommerce agency</h2>
 
-    <div class="service">
-        <h3 class="service-title">Digital Design</h3>
-        <p>Get visually appealing designs and animations to ensure the highest conversion rate for your business</p>
+    <div class="services-container">
+        <div class="service">
+            <h3 class="service-title">Digital Design</h3>
+            <p>
+                Get visually appealing designs and animations to ensure the
+                highest conversion rate for your business
+            </p>
+        </div>
+        <div class="service">
+            <h3 class="service-title">Web Development</h3>
+            <p>
+                Build with the technology that best suits your project to
+                achieve your goals within your budget
+            </p>
+        </div>
+        <div class="service">
+            <h3 class="service-title">Marketing</h3>
+            <p>
+                Increase your digital exposure and raise your positioning
+                through ads campaigns and content creation
+            </p>
+        </div>
     </div>
-    <div class="service">
-        <h3 class="service-title">Web Development</h3>
-        <p>Build with the technology that best suits your project to achieve your goals within your budget</p>
-    </div>
-    <div class="service">
-        <h3 class="service-title">Marketing</h3>
-        <p>Increase your digital exposure and raise your positioning through ads campaigns and content creation</p>
-    </div>
-
 </div>
 
-
-<script>
-    
-</script>
+<script></script>
