@@ -1,0 +1,23 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+---
+
+<style
+  define:vars={{
+    marginLeft: blok.margin_left,
+  }}
+>
+  h3 {
+    margin-left: calc(var(--marginLeft) * 1px);
+  }
+</style>
+
+<div {...storyblokEditable(blok)}>
+  <h3 class="py-32 text-6xl text-[#50b0ae] font-bold text-center">
+    {blok.headline}
+  </h3>
+  <p>{blok.text}</p>
+  <p>{blok.margin_left}</p>
+</div>

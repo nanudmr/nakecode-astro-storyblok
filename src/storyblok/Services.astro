@@ -1,0 +1,66 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import { Image } from "astro:assets";
+
+const { blok } = Astro.props;
+
+---
+
+<style>
+    .services{
+        border-top: 1px solid #777777;
+        padding: 4rem 1rem;
+    }
+
+    h2{
+        font-size: 3.6rem;
+        color: #111111;
+        line-height: 120%;
+        margin-bottom: 4rem;
+    }
+
+    .service{
+        padding: 4rem 0;
+    }
+
+    h3{
+        font-size: 3rem;
+        columns: #222222;
+        line-height: 100%;
+    }
+
+    @media only screen and (min-width: 390px) {
+    }
+
+    @media only screen and (min-width: 490px) {
+    }
+
+    @media only screen and (min-width: 990px) {
+    }
+
+    @media only screen and (min-width: 1440px) {
+    }
+</style>
+
+<div class="services" {...storyblokEditable(blok)}>
+    <h2>Your one-stop ecommerce agency</h2>
+
+    <div class="service">
+        <h3 class="service-title">Digital Design</h3>
+        <p>Get visually appealing designs and animations to ensure the highest conversion rate for your business</p>
+    </div>
+    <div class="service">
+        <h3 class="service-title">Web Development</h3>
+        <p>Build with the technology that best suits your project to achieve your goals within your budget</p>
+    </div>
+    <div class="service">
+        <h3 class="service-title">Marketing</h3>
+        <p>Increase your digital exposure and raise your positioning through ads campaigns and content creation</p>
+    </div>
+
+</div>
+
+
+<script>
+    
+</script>

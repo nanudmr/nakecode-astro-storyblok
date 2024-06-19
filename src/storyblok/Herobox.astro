@@ -1,0 +1,116 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import { Image } from "astro:assets";
+
+const { blok } = Astro.props;
+
+import RightArrow from "../assets/right-arrow-grey-bg.svg";
+---
+
+<style>
+    .herobox {
+        padding: 4rem 1rem;
+    }
+    .herobox-content {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: clamp(3.6rem, 17.143vw - 1.886rem, 4.8rem);
+        line-height: 100%;
+
+        margin-bottom: 2.4rem;
+        padding: 0 0.6rem;
+
+        color: #111111;
+    }
+
+    .subheading {
+        font-size: clamp(1.6rem, 5.714vw - 0.229rem, 1.8rem);
+        line-height: 180%;
+
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        padding: 0 0.6rem;
+
+        color: #555555;
+    }
+
+    button {
+        padding: 1.1rem 1.1rem 1.1rem 1.8rem;
+        margin: 0 auto;
+
+        background-color: #1a1a1a;
+
+        border-radius: 2.6rem;
+
+        white-space: nowrap;
+    }
+
+    .button-content {
+        font-size: clamp(1.6rem, 5.714vw - 0.229rem, 1.8rem);
+
+        color: #ffffff;
+
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media only screen and (min-width: 390px) {
+        .right-arrow {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    @media only screen and (min-width: 490px) {
+        h1 {
+            font-size: clamp(4.8rem, 1.524vw + 4.206rem, 6.4rem);
+        }
+        .subheading {
+            width: clamp(45.2rem, 24.713vw + 26.814rem, 62.4rem);
+        }
+    }
+
+    @media only screen and (min-width: 990px) {
+        button {
+            font-size: 2rem;
+        }
+        .subheading {
+            width: clamp(62.4rem, 23.226vw + 39.406rem, 84rem);
+        }
+    }
+
+    @media only screen and (min-width: 1440px) {
+        h1 {
+            font-size: clamp(6.4rem, 3.333vw + 1.6rem, 8rem);
+        }
+    }
+</style>
+
+<div class="herobox" {...storyblokEditable(blok)}>
+    <div class="herobox-content">
+        <h1>{blok.heading}</h1>
+        <p class="subheading">{blok.subheading}</p>
+
+        <div class="button-container">
+            <button>
+                <div class="button-content">
+                    {blok.button_text}
+                    <Image
+                        class="right-arrow"
+                        src={RightArrow}
+                        alt="right arrow"
+                    />
+                </div></button
+            >
+        </div>
+    </div>
+</div>
+
+
+<script>
+    
+</script>

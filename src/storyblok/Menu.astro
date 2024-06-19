@@ -1,0 +1,19 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+---
+
+<style>
+    .menu{
+        height: 5.6rem;
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="menu" {...storyblokEditable(blok)}>
+    <p>MENU</p>
+</div>

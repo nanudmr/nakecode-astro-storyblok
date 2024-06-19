@@ -1,0 +1,254 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import { Image } from "astro:assets";
+
+const { blok } = Astro.props;
+
+import ReactIcon from "../assets/images/react-icon.webp";
+import AstroIcon from "../assets/images/astro-icon.png";
+import GsapIcon from "../assets/images/gsap-icon.png";
+import SupabaseIcon from "../assets/images/supabase-icon.png";
+import FirebaseIcon from "../assets/images/firebase-icon.png";
+import StoryblokIcon from "../assets/images/storyblok-icon.png";
+import NextIcon from "../assets/images/next-icon.png";
+import LiquidIcon from "../assets/images/liquid-icon.png";
+import ShopifyIcon from "../assets/images/shopify-icon.png";
+import WebflowIcon from "../assets/images/webflow-icon.png";
+import FigmaIcon from "../assets/images/figma-icon.png";
+import AdobeIcon from "../assets/images/adobe-icon.png";
+import AffinityIcon from "../assets/images/affinity-icon.png";
+import WordpressIcon from "../assets/images/wordpress-icon.png";
+import ElementorIcon from "../assets/images/elementor-icon.png";
+---
+
+<style>
+    h2 {
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 150%;
+        color: #777777;
+        font-weight: 400;
+        margin-bottom: 4rem;
+    }
+    .sliders {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+    }
+    .slider {
+        overflow-x: hidden;
+    }
+
+    .slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.2rem;
+    }
+    li {
+        width: auto !important;
+    }
+
+    li img {
+        /* border: 1px solid green; */
+        height: 48px;
+        width: 48px;
+    }
+
+    li p {
+        display: inline-block;
+        font-size: 2.7rem;
+        font-weight: 700;
+    }
+</style>
+
+<div class="slider-section">
+    <h2>technologies we work with</h2>
+
+    <div class="sliders">
+        <div class="slider" {...storyblokEditable(blok)}>
+            <section
+                id="top-slider"
+                class="splide"
+                aria-label="Splide Basic HTML Example"
+                data-direction={blok.direction}
+            >
+                <div class="splide__track lista">
+                    <ul class="splide__list">
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={ReactIcon}
+                                alt="React Icon"
+                            />
+                            <p class="image-text">React</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={AstroIcon}
+                                alt="Astro Icon"
+                            />
+                            <p class="image-text">Astro</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={GsapIcon}
+                                alt="GSAP Icon"
+                            />
+                            <p class="image-text">GSAP</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={SupabaseIcon}
+                                alt="Supabase Icon"
+                            />
+                            <p class="image-text">Supabase</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={FirebaseIcon}
+                                alt="Firebase Icon"
+                            />
+                            <p class="image-text">Firebase</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={StoryblokIcon}
+                                alt="Storyblok Icon"
+                            />
+                            <p class="image-text">Storyblok</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={NextIcon}
+                                alt="Next Icon"
+                            />
+                            <p class="image-text">Next</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="slider">
+            <section
+                id="bottom-slider"
+                class="splide"
+                aria-label="Splide Basic HTML Example"
+            >
+                <div class="splide__track lista">
+                    <ul class="splide__list">
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={LiquidIcon}
+                                alt="Liquid Icon"
+                            />
+                            <p class="image-text">Liquid</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={ShopifyIcon}
+                                alt="Shopify Icon"
+                            />
+                            <p class="image-text">Shopify</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={WebflowIcon}
+                                alt="Webflow Icon"
+                            />
+                            <p class="image-text">Webflow</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={FigmaIcon}
+                                alt="Figma Icon"
+                            />
+                            <p class="image-text">Figma</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={AdobeIcon}
+                                alt="Adobe Icon"
+                            />
+                            <p class="image-text">Adobe</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={AffinityIcon}
+                                alt="Affinity Icon"
+                            />
+                            <p class="image-text">Affinity</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={WordpressIcon}
+                                alt="Wordpress Icon"
+                            />
+                            <p class="image-text">Wordpress</p>
+                        </li>
+                        <li class="splide__slide slide">
+                            <Image
+                                class="image"
+                                src={ElementorIcon}
+                                alt="Elementor Icon"
+                            />
+                            <p class="image-text">Elementor</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+    import "@splidejs/splide/css";
+    import Splide from "@splidejs/splide";
+    import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
+    const direction = (document.querySelector("#top-slider") as HTMLElement)
+        .dataset.direction;
+
+    new Splide("#top-slider", {
+        type: "loop",
+        focus: "center",
+        gap: "27px",
+        pauseOnFocus: false,
+        drag: false,
+        arrows: false,
+        pagination: false,
+        perPage: 3,
+        autoScroll: {
+            speed: 0.15,
+        },
+    }).mount({ AutoScroll });
+
+    new Splide("#bottom-slider", {
+        type: "loop",
+        focus: "center",
+        gap: "27px",
+        pauseOnFocus: false,
+        drag: false,
+        arrows: false,
+        pagination: false,
+        perPage: 3,
+        autoScroll: {
+            speed: -0.15,
+        },
+    }).mount({ AutoScroll });
+</script>

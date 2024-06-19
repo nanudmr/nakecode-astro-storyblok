@@ -1,0 +1,73 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <title>The Storyblok Astro Ultimate Tutorial: Part 1</title>
+  </head>
+
+  <style is:global>
+    @font-face {
+        font-family: "uncut-sans";
+        src: url("/fonts/UncutSans-Bold.woff") format("woff");
+        font-style: 700;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "uncut-sans";
+        src: url("/fonts/UncutSans-Regular.woff") format("woff");
+        font-style: 400;
+        font-display: swap;
+    }
+    
+
+    html {
+        font-size: 62.5%;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit; 
+        vertical-align: baseline;
+        box-sizing: border-box;
+        color: black;
+        font-family: "uncut-sans", sans-serif;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        box-sizing: border-box; /* Opera/IE 8+ */
+    }
+
+    body {
+        background-color: #FFFFFF;
+    }
+
+    h1{
+      font-size: 3.6rem;
+      font-weight: 700;
+    }
+
+    h2{
+      font-weight: 3rem;
+      font-weight: 700;
+    }
+    
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    p{
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+
+</style>
+  <body>
+    <slot />
+  </body>
+</html>
