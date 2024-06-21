@@ -19,6 +19,13 @@ import RightArrow from "../assets/images/right-arrow.svg";
 <style>
     .projects-slider-section {
         padding: 4rem 1rem;
+        border-top: 1px solid #DDDDDD;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2.4rem;
     }
 
     .splide-arrows {
@@ -28,13 +35,7 @@ import RightArrow from "../assets/images/right-arrow.svg";
         gap: 1.2rem;
     }
 
-    .top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2.4rem;
-    }
-    .top p {
+    .latest {
         font-size: 1.8rem;
         line-height: 180%;
         color: #555555;
@@ -48,15 +49,18 @@ import RightArrow from "../assets/images/right-arrow.svg";
         font-weight: 700;
     }
 
+    #slider-desktop {
+        display: none;
+    }
+
     .slide img {
-        width: 100%;
-        background-color: black;
         border-radius: 24px;
     }
 
     @media only screen and (min-width: 440px) {
         .slide img {
             aspect-ratio: 16 / 9;
+            width: 100%;
         }
     }
 
@@ -66,118 +70,184 @@ import RightArrow from "../assets/images/right-arrow.svg";
         }
     }
 
-    @media only screen and (min-width: 1024px) {
-        p.image-text {
+    @media only screen and (min-width: 1023px) {
+        .projects-slider-section {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            padding: 0rem 4rem;
+        }
+
+        .slider {
+            grid-column: span 2;
+
+            padding-top: 8rem;
+            padding-left: 8rem;
+            padding-bottom: 8rem;
+
+            border-left: 1px solid #DDDDDD;
+        }
+
+        .latest{
+            margin-bottom: 4rem;
+        }
+
+        .info{
+            flex-direction: column;
+            margin-bottom: 0;
+
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+            justify-content: flex-start;
+        }
+
+        p.image-text.mobile {
+            display: none;
+        }
+
+        #slider-desktop {
+            display: block;
+        }
+
+        p.image-text{
+            margin-bottom: 0;
             font-size: clamp(4rem, 5.769vw - 1.908rem, 6.4rem);
         }
-        .info{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            max-width: 900px;
+
+        .splide-arrows{
+            margin-top: auto;
         }
 
-        .slide{
-            max-width: 100%;
-        }
 
-        .slider{
-            max-width: 100%;
-        }
-
-        li{
-            max-width: 100%;
-        }
-
-        .splide__slide{
-            max-width: 100%;
-        }
-
-        .slide img {
-            max-width: 300px;
-        }
     }
 </style>
 
 <div class="projects-slider-section" {...storyblokEditable(blok)}>
     <div class="info">
-        <div class="top">
-            <p>Latest Projects</p>
-
-            <div class="splide-arrows">
-                <button class="splide-arrow prev-arrow">
-                    <Image class="image" src={LeftArrow} alt="Left Arrow" />
-                </button>
-                <button class="splide-arrow next-arrow">
-                    <Image class="image" src={RightArrow} alt="Right Arrow" />
-                </button>
+        <p class="latest">Latest Projects</p>
+        <section
+            id="slider-desktop"
+            class="splide my-slider"
+            aria-label="Splide Basic HTML Example"
+        >
+            <div class="splide__track list">
+                <ul class="splide__list">
+                    <li class="splide__slide slide">
+                        <p class="image-text">Robert Ventures</p>
+                    </li>
+                    <li class="splide__slide slide">
+                        <p class="image-text">Vei Center</p>
+                    </li>
+                    <li class="splide__slide slide">
+                        <p class="image-text">Iunick</p>
+                    </li>
+                    <li class="splide__slide slide">
+                        <p class="image-text">MobileTread</p>
+                    </li>
+                </ul>
             </div>
+        </section>
+
+        <div class="splide-arrows">
+            <button id="prev-arrow" class="splide-arrow">
+                <Image class="image" src={LeftArrow} alt="Left Arrow" />
+            </button>
+            <button id="next-arrow" class="splide-arrow">
+                <Image class="image" src={RightArrow} alt="Right Arrow" />
+            </button>
         </div>
-        <div class="slider">
-            <section
-                id="slider"
-                class="splide"
-                aria-label="Splide Basic HTML Example"
-            >
-                <div class="splide__track list">
-                    <ul class="splide__list">
-                        <li class="splide__slide slide">
-                            <p class="image-text">Placeholder 1</p>
-                            <Image
-                                class="image"
-                                src={MobilePlaceHolder1}
-                                alt="Placeholder 1"
-                            />
-                        </li>
-                        <li class="splide__slide slide">
-                            <p class="image-text">Placeholder 2</p>
-                            <Image
-                                class="image"
-                                src={MobilePlaceHolder2}
-                                alt="Placeholder 2"
-                            />
-                        </li>
-                        <li class="splide__slide slide">
-                            <p class="image-text">Placeholder 3</p>
-                            <Image
-                                class="image"
-                                src={MobilePlaceHolder3}
-                                alt="Placeholder 3"
-                            />
-                        </li>
-                        <li class="splide__slide slide">
-                            <p class="image-text">Placeholder 4</p>
-                            <Image
-                                class="image"
-                                src={MobilePlaceHolder4}
-                                alt="Placeholder 4"
-                            />
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </div>
+    </div>
+    <div class="slider">
+        <section
+            id="slider"
+            class="splide my-slider"
+            aria-label="Splide Basic HTML Example"
+        >
+            <div class="splide__track list">
+                <ul class="splide__list">
+                    <li class="splide__slide slide">
+                        <p class="image-text mobile">Placeholder 1</p>
+                        <Image
+                            class="image"
+                            src={MobilePlaceHolder1}
+                            alt="Placeholder 1"
+                        />
+                    </li>
+                    <li class="splide__slide slide">
+                        <p class="image-text mobile">Placeholder 2</p>
+                        <Image
+                            class="image"
+                            src={MobilePlaceHolder2}
+                            alt="Placeholder 2"
+                        />
+                    </li>
+                    <li class="splide__slide slide">
+                        <p class="image-text mobile">Placeholder 3</p>
+                        <Image
+                            class="image"
+                            src={MobilePlaceHolder3}
+                            alt="Placeholder 3"
+                        />
+                    </li>
+                    <li class="splide__slide slide">
+                        <p class="image-text mobile">Placeholder 4</p>
+                        <Image
+                            class="image"
+                            src={MobilePlaceHolder4}
+                            alt="Placeholder 4"
+                        />
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 </div>
 
 <script>
     import Splide from "@splidejs/splide";
 
-    const prevArrow = document.querySelector(".prev-arrow");
-    const nextArrow = document.querySelector(".next-arrow");
+    const prevArrow = document.getElementById("prev-arrow");
+    const nextArrow = document.getElementById("next-arrow");
 
     let splide = new Splide("#slider", {
         type: "loop",
-        pauseOnFocus: false,
         drag: true,
         arrows: false,
         pagination: false,
         perPage: 1,
+        autoplay: true,
+        interval: 3000,
+        speed: 1000,
     }).mount();
 
-    prevArrow.addEventListener("click", () => {
-        splide.go("-1");
-    });
-    nextArrow.addEventListener("click", () => {
-        splide.go("+1");
-    });
+    let splide2 = new Splide("#slider-desktop", {
+        type: "loop",
+        drag: true,
+        arrows: false,
+        pagination: false,
+        perPage: 1,
+        autoplay: true,
+        interval: 3000,
+        speed: 1000,
+    }).mount();
+
+    // Function to sync the movement of two carousels
+    function syncCarousels(main, secondary) {
+        main.on("move", (newIndex) => {
+            secondary.go(newIndex);
+        });
+    }
+
+    // Function to handle arrow click events
+    function handleArrowClick(direction) {
+        splide.go(direction);
+        splide2.go(splide.index);
+    }
+
+    // Add event listeners for arrow buttons
+    prevArrow.addEventListener("click", () => handleArrowClick("-1"));
+    nextArrow.addEventListener("click", () => handleArrowClick("+1"));
+
+    // Sync the carousels
+    syncCarousels(splide, splide2);
+    syncCarousels(splide2, splide);
 </script>
