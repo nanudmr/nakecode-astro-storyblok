@@ -25,7 +25,8 @@ export default defineConfig({
         herobox: 'storyblok/Herobox',
         menu: 'storyblok/Menu',
         slider: 'storyblok/DoubleSlider',
-        services: 'storyblok/Services'
+        services: 'storyblok/Services',
+        projects: 'storyblok/ProjectsSlider'
       },
     }),
     tailwind(),
