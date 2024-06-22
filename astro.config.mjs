@@ -7,6 +7,8 @@ const env = loadEnv('', process.cwd(), 'STORYBLOK')
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://nanudmr.github.io',
+  base: 'nakecode-astro-storyblok',
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
