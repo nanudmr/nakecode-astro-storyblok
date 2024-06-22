@@ -26,7 +26,8 @@ export default defineConfig({
         menu: 'storyblok/Menu',
         slider: 'storyblok/DoubleSlider',
         services: 'storyblok/Services',
-        projects: 'storyblok/ProjectsSlider'
+        projects: 'storyblok/ProjectsSlider',
+        footer: 'storyblok/Footer'
       },
     }),
     tailwind(),

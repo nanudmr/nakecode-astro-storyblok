@@ -8,9 +8,9 @@ import NakecodeLogo from "../assets/nakecode-logo-black.svg";
 ---
 
 <style>
-    .menu {
+    .footer {
         padding: 0 1rem;
-        border-bottom: 1px solid #dddddd;
+        border-top: 1px solid #dddddd;
     }
     nav {
         display: flex;
@@ -28,24 +28,24 @@ import NakecodeLogo from "../assets/nakecode-logo-black.svg";
     }
 
     @media only screen and (min-width: 744px) {
-        .menu {
+        .footer {
             padding: 0 2rem;
         }
     }
 
     @media only screen and (min-width: 1024px) {
-        .menu {
+        .footer {
             padding: 0 4rem;
         }
     }
     @media only screen and (min-width: 1440px) {
-        .menu {
+        .footer {
             padding: 0 8rem;
         }
     }
 </style>
 
-<div class="menu" {...storyblokEditable(blok)}>
+<div class="footer" {...storyblokEditable(blok)}>
     <nav>
         <Image class="right-arrow" src={NakecodeLogo} alt="right arrow" />
         <p>Nakecode</p>
