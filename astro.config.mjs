@@ -11,7 +11,7 @@ export default defineConfig({
   base: '/nakecode-astro-storyblok',
   integrations: [
     storyblok({
-      accessToken: env.STORYBLOK_TOKEN,
+      accessToken: import.meta.env.STORYBLOK_API_KEY,
       livePreview: true,
       apiOptions: {
         region: 'us',
